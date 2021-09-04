@@ -14679,7 +14679,7 @@ Looks like there is no null values in the transcript dataframe
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe949427160&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fde4fd9f1d0&gt;</pre>
 </div>
 
 </div>
@@ -14943,7 +14943,7 @@ Name: became_member_on, dtype: datetime64[ns]</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe9493044a8&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fde4fc765c0&gt;</pre>
 </div>
 
 </div>
@@ -14993,7 +14993,7 @@ Name: became_member_on, dtype: datetime64[ns]</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe9492bd828&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fde4fc35940&gt;</pre>
 </div>
 
 </div>
@@ -15042,7 +15042,7 @@ Name: became_member_on, dtype: datetime64[ns]</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;seaborn.axisgrid.PairGrid at 0x7fe9492c5da0&gt;</pre>
+<pre>&lt;seaborn.axisgrid.PairGrid at 0x7fde4fc3dcc0&gt;</pre>
 </div>
 
 </div>
@@ -15092,7 +15092,7 @@ Name: became_member_on, dtype: datetime64[ns]</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe948f0efd0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fde4f84b630&gt;</pre>
 </div>
 
 </div>
@@ -15141,7 +15141,7 @@ Name: became_member_on, dtype: datetime64[ns]</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe94927f5c0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fde4f9c4668&gt;</pre>
 </div>
 
 </div>
@@ -15190,7 +15190,7 @@ Name: became_member_on, dtype: datetime64[ns]</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe948eea278&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fde4f7f2080&gt;</pre>
 </div>
 
 </div>
@@ -19339,6 +19339,96 @@ Name: event, dtype: int64</pre>
 <div class="prompt input_prompt">In&nbsp;[98]:</div>
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Printing the value count of the Y train variable after train and test split</span>
+
+<span class="n">y_train</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[98]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2    36468
+1    20910
+Name: event, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Printing the value count of the Y test variable after train and test split</span>
+
+<span class="n">y_test</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[99]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2    17928
+1    10334
+Name: event, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion-of-the-Test-and-Train-datasets">Conclusion of the Test and Train datasets<a class="anchor-link" href="#Conclusion-of-the-Test-and-Train-datasets">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we can see that the lables are imbalanced, approximately 2:1 (which is double in our case) for Positive vs. Negative labels.
+Hence, we are using F1_score as well as accuracy, since F1_score is a metric which is used to balance recall &amp; precision and to deal with imbalanced labels.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create linear regression object</span>
 <span class="n">linear_regression</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
 </pre></div>
@@ -19350,16 +19440,23 @@ Name: event, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In&nbsp;[101]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fitting the Linear Regression model on the training data</span>
 
 <span class="n">linear_regression</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_predict</span> <span class="o">=</span> <span class="n">linear_regression</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---------------------------------------------------------------&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of Linear Regression classifier on training set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">linear_regression</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--------------------------------------------------------------&#39;</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of Linear Regression classifier on test set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">linear_regression</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------------------------------------&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -19376,8 +19473,11 @@ Name: event, dtype: int64</pre>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Accuracy of Linear Regression classifier on training set: 0.11
+<pre>---------------------------------------------------------------
+Accuracy of Linear Regression classifier on training set: 0.11
+--------------------------------------------------------------
 Accuracy of Linear Regression classifier on test set: 0.11
+-------------------------------------------------------------
 </pre>
 </div>
 </div>
@@ -19388,7 +19488,7 @@ Accuracy of Linear Regression classifier on test set: 0.11
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Using the random forest classifier for the prediction</span>
@@ -19398,11 +19498,17 @@ Accuracy of Linear Regression classifier on test set: 0.11
 <span class="n">predicted</span><span class="o">=</span><span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
  
 <span class="c1">#printing the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Confusion Matrix :&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Accuracy Score :&#39;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Report : &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Report - &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predicted</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -19419,11 +19525,16 @@ Accuracy of Linear Regression classifier on test set: 0.11
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Confusion Matrix :
-[[ 4835  5499]
- [ 3514 14414]]
-Accuracy Score : 0.68109121789
-Report : 
+<pre>------------------------------------------------------------
+Confusion Matrix :
+------------------------------------------------------------
+[[ 4829  5505]
+ [ 3539 14389]]
+------------------------------------------------------------
+Accuracy Score : 0.679994338688
+------------------------------------------------------------
+Report - 
+------------------------------------------------------------
              precision    recall  f1-score   support
 
           1       0.58      0.47      0.52     10334
@@ -19431,6 +19542,7 @@ Report :
 
 avg / total       0.67      0.68      0.67     28262
 
+------------------------------------------------------------
 </pre>
 </div>
 </div>
@@ -19441,17 +19553,34 @@ avg / total       0.67      0.68      0.67     28262
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[101]:</div>
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Logistic Regression of our ML model</span>
 
 <span class="n">logreg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
 <span class="n">logreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_predict</span> <span class="o">=</span> <span class="n">logreg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of Logistic regression classifier on training set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of Logistic regression classifier on test set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">logreg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)))</span>
+
+
+<span class="c1">#printing the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Confusion Matrix :&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Accuracy Score :&#39;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Report - &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -19470,83 +19599,24 @@ avg / total       0.67      0.68      0.67     28262
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Accuracy of Logistic regression classifier on training set: 0.65
 Accuracy of Logistic regression classifier on test set: 0.65
-</pre>
-</div>
-</div>
+------------------------------------------------------------
+Confusion Matrix :
+------------------------------------------------------------
+[[ 3039  7295]
+ [ 2547 15381]]
+------------------------------------------------------------
+Accuracy Score : 0.651758545043
+------------------------------------------------------------
+Report - 
+------------------------------------------------------------
+             precision    recall  f1-score   support
 
-</div>
-</div>
+          1       0.54      0.29      0.38     10334
+          2       0.68      0.86      0.76     17928
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># DecisionTreeClassifier of our ML model</span>
+avg / total       0.63      0.65      0.62     28262
 
-<span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of Decision Tree classifier on training set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
-     <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of Decision Tree classifier on test set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
-     <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Accuracy of Decision Tree classifier on training set: 0.77
-Accuracy of Decision Tree classifier on test set: 0.69
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># KNN Classifier</span>
-
-<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span>
-<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of K-NN classifier on training set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
-     <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of K-NN classifier on test set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
-     <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Accuracy of K-NN classifier on training set: 0.73
-Accuracy of K-NN classifier on test set: 0.67
+------------------------------------------------------------
 </pre>
 </div>
 </div>
@@ -19560,15 +19630,190 @@ Accuracy of K-NN classifier on test set: 0.67
 <div class="prompt input_prompt">In&nbsp;[104]:</div>
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># DecisionTreeClassifier of our ML model</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_predict</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of Decision Tree classifier on training set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
+     <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of Decision Tree classifier on test set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
+     <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)))</span>
+
+<span class="c1">#printing the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Confusion Matrix :&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Accuracy Score :&#39;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Report - &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>------------------------------------------------------------
+Accuracy of Decision Tree classifier on training set: 0.77
+------------------------------------------------------------
+Accuracy of Decision Tree classifier on test set: 0.69
+------------------------------------------------------------
+Confusion Matrix :
+------------------------------------------------------------
+[[ 5379  4955]
+ [ 3940 13988]]
+------------------------------------------------------------
+Accuracy Score : 0.685266435496
+------------------------------------------------------------
+Report - 
+------------------------------------------------------------
+             precision    recall  f1-score   support
+
+          1       0.58      0.52      0.55     10334
+          2       0.74      0.78      0.76     17928
+
+avg / total       0.68      0.69      0.68     28262
+
+------------------------------------------------------------
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># KNN Classifier</span>
+
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_predict</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of K-NN classifier on training set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
+     <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of K-NN classifier on test set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
+     <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)))</span>
+
+
+<span class="c1">#printing the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Confusion Matrix :&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Accuracy Score :&#39;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Report - &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>------------------------------------------------------------
+Accuracy of K-NN classifier on training set: 0.73
+------------------------------------------------------------
+Accuracy of K-NN classifier on test set: 0.67
+------------------------------------------------------------
+Confusion Matrix :
+------------------------------------------------------------
+[[ 5154  5180]
+ [ 4170 13758]]
+------------------------------------------------------------
+Accuracy Score : 0.669167079471
+------------------------------------------------------------
+Report - 
+------------------------------------------------------------
+             precision    recall  f1-score   support
+
+          1       0.55      0.50      0.52     10334
+          2       0.73      0.77      0.75     17928
+
+avg / total       0.66      0.67      0.67     28262
+
+------------------------------------------------------------
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># SVC</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <span class="n">SVC</span>
 <span class="n">svm</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
 <span class="n">svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_predict</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of SVM classifier on training set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">svm</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of SVM classifier on test set: </span><span class="si">{:.2f}</span><span class="s1">&#39;</span>
      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">svm</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)))</span>
+
+
+<span class="c1">#printing the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Confusion Matrix :&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Accuracy Score :&#39;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Report - &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------------------------------------------&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -19586,7 +19831,26 @@ Accuracy of K-NN classifier on test set: 0.67
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Accuracy of SVM classifier on training set: 0.65
+------------------------------------------------------------
 Accuracy of SVM classifier on test set: 0.65
+------------------------------------------------------------
+Confusion Matrix :
+------------------------------------------------------------
+[[ 1109  9225]
+ [  729 17199]]
+------------------------------------------------------------
+Accuracy Score : 0.647795626636
+------------------------------------------------------------
+Report - 
+------------------------------------------------------------
+             precision    recall  f1-score   support
+
+          1       0.60      0.11      0.18     10334
+          2       0.65      0.96      0.78     17928
+
+avg / total       0.63      0.65      0.56     28262
+
+------------------------------------------------------------
 </pre>
 </div>
 </div>
@@ -19597,20 +19861,371 @@ Accuracy of SVM classifier on test set: 0.65
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[107]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Model Refinement using Grid Search Cross Valiation - Hyperparameters Tuning</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creating the evaluation table so that ML models can be compared in a tabular format</span>
+<span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">svm</span><span class="p">,</span> <span class="n">linear_regression</span><span class="p">,</span> <span class="n">knn</span><span class="p">,</span> <span class="n">clf</span><span class="p">,</span> <span class="n">logreg</span><span class="p">,</span><span class="n">classifier</span><span class="p">]</span>
+<span class="n">model_names</span> <span class="o">=</span> <span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">names</span> <span class="ow">in</span> <span class="n">models</span><span class="p">]</span>
+<span class="n">training_accuracy</span> <span class="o">=</span> <span class="p">[</span><span class="n">train_score</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span> <span class="k">for</span> <span class="n">train_score</span> <span class="ow">in</span> <span class="n">models</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Prining the ML comparision results</span>
+
+<span class="n">ML_compare_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">training_accuracy</span><span class="p">]</span>
+<span class="n">ML_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">ML_compare_results</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">model_names</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ML_results</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[109]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SVC</th>
+      <th>LinearRegression</th>
+      <th>KNeighborsClassifier</th>
+      <th>DecisionTreeClassifier</th>
+      <th>LogisticRegression</th>
+      <th>RandomForestClassifier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Training Accuracy</th>
+      <td>65.120778</td>
+      <td>11.060059</td>
+      <td>73.446269</td>
+      <td>76.667015</td>
+      <td>65.23929</td>
+      <td>76.233051</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Cross Validation for our ML model</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Since, Decision Tree Classifier is having the highest training accuracy, </span>
+<span class="c1">#I am moving ahead with this ML model and doing the Cross Validation.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">cross_val_score</span>
+<span class="n">all_accuracies</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">classifier</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[114]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">all_accuracies</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[ 0.67567097  0.67811084  0.67235971  0.67215686  0.67433551]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[115]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">all_accuracies</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0.67452677749
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[116]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">all_accuracies</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0.00221377245132
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The result is: 0.00221377245132.
+This is extremely low, which means that our model has a very low variance, which is actually very good since that means that the prediction that we obtained on one test set is not by chance. Rather, the model will perform more or less similar on all test sets.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Grid-Search-for-Parameter-Selection">Grid Search for Parameter Selection<a class="anchor-link" href="#Grid-Search-for-Parameter-Selection">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Importing the Grid Search CV library package</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">GridSearchCV</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LogisticRegression</span>
-<span class="n">CVgrid</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;C&quot;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="s2">&quot;penalty&quot;</span><span class="p">:[</span><span class="s2">&quot;l1&quot;</span><span class="p">,</span><span class="s2">&quot;l2&quot;</span><span class="p">]}</span> <span class="c1"># l1 lasso l2 ridge</span>
-<span class="n">logregressor</span><span class="o">=</span><span class="n">LogisticRegression</span><span class="p">()</span>
-<span class="n">logregressor_cv</span><span class="o">=</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">logregressor</span><span class="p">,</span><span class="n">CVgrid</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">logregressor_cv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hypertune Parameters :(best parameters) &quot;</span><span class="p">,</span><span class="n">logregressor_cv</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;accuracy :&quot;</span><span class="p">,</span><span class="n">logregressor_cv</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[118]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setting the Grid Parameters</span>
+<span class="n">grid_parameters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;max_depth&#39;</span><span class="p">:[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">150</span><span class="p">],</span>
+    <span class="s1">&#39;criterion&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;entropy&#39;</span><span class="p">]</span>   
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Appying the Grid Search CV</span>
+<span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">classifier</span><span class="p">,</span>
+                     <span class="n">param_grid</span><span class="o">=</span><span class="n">grid_parameters</span><span class="p">,</span>
+                     <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span>
+                     <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                     <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[120]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fitting the Grid Search for training data</span>
+<span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[120]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>GridSearchCV(cv=5, error_score=&#39;raise&#39;,
+       estimator=DecisionTreeClassifier(class_weight=None, criterion=&#39;gini&#39;, max_depth=None,
+            max_features=None, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, presort=False, random_state=0,
+            splitter=&#39;best&#39;),
+       fit_params=None, iid=True, n_jobs=-1,
+       param_grid={&#39;max_depth&#39;: [4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 20, 30, 40, 50, 70, 90, 120, 150], &#39;criterion&#39;: [&#39;gini&#39;, &#39;entropy&#39;]},
+       pre_dispatch=&#39;2*n_jobs&#39;, refit=True, return_train_score=&#39;warn&#39;,
+       scoring=&#39;accuracy&#39;, verbose=0)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[122]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Printing the best paramters for our ML model</span>
+<span class="n">best_parameters</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best Parameters are ---&gt; &quot;</span><span class="p">,</span><span class="n">best_parameters</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -19627,8 +20242,7 @@ Accuracy of SVM classifier on test set: 0.65
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Hypertune Parameters :(best parameters)  {&#39;C&#39;: 0.01, &#39;penalty&#39;: &#39;l2&#39;}
-accuracy : 0.654815434487
+<pre>Best Parameters are ---&gt;  {&#39;criterion&#39;: &#39;entropy&#39;, &#39;max_depth&#39;: 15}
 </pre>
 </div>
 </div>
@@ -19639,33 +20253,13 @@ accuracy : 0.654815434487
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">logreg2</span><span class="o">=</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">penalty</span><span class="o">=</span><span class="s2">&quot;l2&quot;</span><span class="p">)</span>
-<span class="n">logreg2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;score&quot;</span><span class="p">,</span><span class="n">logreg2</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>score 0.651758545043
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
